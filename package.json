@@ -1,0 +1,22 @@
+{
+  "name": "instagramapp",
+  "version": "1.0.0",
+  "description": "A NodeJS app that collects data from images in an Instagram account and shows them to user in browser",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "instagram",
+    "images",
+    "NodeJS"
+  ],
+  "author": "juliancoder",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "~2.3.4",
+    "instagram-node": "~0.5.8",
+    "express": "~4.13.3"
+  }
+}

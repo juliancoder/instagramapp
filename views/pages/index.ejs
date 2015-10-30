@@ -1,0 +1,47 @@
+<!-- index.ejs: main page file for application views -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Including partial: head.ejs -->
+  <% include ../partials/head %>
+</head>
+<body class="container">
+  <!-- Including partial: header.ejs -->
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+      <!-- Here we show the contents we passed through the route "/" in server.js ... -->
+      <!-- By looping over the grams object, we have access to everything that was returned by the API -->
+      <div class="row">
+        <% grams.forEach(function(gram) { %>
+            <div class="instagram-pic col-sm-3">
+
+              <a href="<%= gram.link %>" target="_blank">
+                <img src="<%= gram.images.standard_resolution.url %>" class="img-responsive"/>
+              </a>
+
+              <div class="instagram-bar">
+                <div class="likes">
+                  <span class="glyphicon glyphicon-heart"></span>
+                  <%= gram.likes.count %>
+                </div>
+
+                <div class="comments">
+                  <span class="glyphicon glyphicon-comment"></span>
+                  <%= gram.comments.count %>
+                </div>
+              </div>
+
+            </div>
+        <% }); %>
+
+      </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
